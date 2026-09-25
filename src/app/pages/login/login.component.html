@@ -1,0 +1,48 @@
+<main class="auth-page">
+  <section class="auth-form-panel">
+    <div class="brand">Expense Tracker</div>
+
+    <div class="login-content">
+      <h1>Welcome Back</h1>
+      <p class="subtitle">Please enter your details to log in</p>
+
+      <form [formGroup]="loginForm" (ngSubmit)="submit()" novalidate>
+        <label for="email">Email Address</label>
+        <input id="email" type="email" formControlName="email" placeholder="john@example.com">
+        @if(loginForm.controls.email.touched && loginForm.controls.email.invalid){
+        <small class="field-error">
+          Enter a valid email address.
+        </small>
+        }
+
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" placeholder="Min 8 characters">
+      @if(loginForm.controls.password.touched && loginForm.controls.password.invalid){
+        <small class="field-error">
+          Password must contain at least 8 characters.
+        </small>
+      }
+      @if(errorMessage){
+        <p class="form-error">{{ errorMessage }}</p>
+      }
+        <button class="primary-button" type="submit">LOGIN</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="auth-visual-panel">
+    <div class="decorative-shape shape-one"></div>
+    <div class="decorative-shape shape-two"></div>
+    <div class="decorative-shape shape-three"></div>
+
+    <div class="stats-card">
+      <div class="stats-icon">↗</div>
+      <div>
+        <span>Track Your Income & Expenses</span>
+        <strong>₹100,000</strong>
+      </div>
+    </div>
+
+    
+  </section>
+</main>

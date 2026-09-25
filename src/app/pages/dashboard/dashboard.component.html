@@ -1,0 +1,19 @@
+<main class="dashboard-page">
+
+  <div class="dashboard-layout">
+    <app-sidebar (addTransaction)="openTransactionForm()"></app-sidebar>
+    @if(showTransactionForm){
+      <app-transaction-form></app-transaction-form>
+    }
+
+    <section class="dashboard-content">
+      <app-dashboard-content></app-dashboard-content>
+
+      <section class="dashboard-grid">
+        <app-dashboard-grid></app-dashboard-grid>
+        <app-finance-overview></app-finance-overview>
+      </section>
+    </section>
+  </div>
+
+</main>

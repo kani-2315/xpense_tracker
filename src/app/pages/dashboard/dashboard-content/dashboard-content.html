@@ -1,0 +1,26 @@
+<section class="dashboard-content">
+  <div class="page-heading">
+    <div>
+      <h1>Dashboard</h1>
+      <p>Here is your financial overview.</p>
+    </div>
+    <span class="date-badge">September 2026</span>
+  </div>
+  <section class="summary-grid">
+    <article class="summary-card purple">
+      <span class="summary-icon">💳</span>
+      <p>Total Balance</p>
+      <h2>{{ data.totalBalance | currency:'USD':'symbol':'1.0-0' }}</h2>
+    </article>
+    <article class="summary-card orange">
+      <span class="summary-icon">💰</span>
+      <p>Total Income</p>
+      <h2>{{ data.totalIncome | currency:'INR':'symbol':'1.0-0' }}</h2>
+    </article>
+    <article class="summary-card red">
+      <span class="summary-icon">↘</span>
+      <p>Total Expense</p>
+      <h2>{{ data.totalExpenses | currency:'INR':'symbol':'1.0-0' }}</h2>
+    </article>
+  </section>
+</section>

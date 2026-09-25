@@ -1,0 +1,53 @@
+/* Summary Grid */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* Summary Card */
+.summary-card {
+  padding: 22px;
+  border-radius: 16px;
+  color: white;
+}
+
+/* Card Colors */
+.summary-card.purple {
+  background: linear-gradient(135deg, #7650ed, #9b7bfa);
+}
+
+.summary-card.orange {
+  background: linear-gradient(135deg, #ef9846, #f6bd75);
+}
+
+.summary-card.red {
+  background: linear-gradient(135deg, #e85d69, #f58e98);
+}
+
+/* Summary Icon */
+.summary-icon {
+  font-size: 22px;
+}
+
+/* Summary Card Description */
+.summary-card p {
+  margin: 18px 0 5px;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* Summary Card Amount */
+.summary-card h2 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+@media (max-width: 520px) {
+  .page-heading {
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+  }
+}

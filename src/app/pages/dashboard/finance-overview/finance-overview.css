@@ -1,0 +1,118 @@
+/* Panel */
+.panel {
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 5px 20px #31204d05;
+}
+
+/* Panel Heading */
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.panel-heading h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Panel Link */
+.panel-link {
+  color: var(--primary-dark);
+  font-size: 11px;
+}
+
+/* Overview Total */
+.overview-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f7f4ff;
+}
+
+.overview-total span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.overview-total strong {
+  color: var(--primary-dark);
+  font-size: 18px;
+}
+
+/* Bar Row */
+.bar-row {
+  margin-top: 25px;
+}
+
+/* Bar Label */
+.bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.bar-label strong {
+  font-weight: 500;
+}
+
+/* Bar Track */
+.bar-track {
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: #eeeaf5;
+  overflow: hidden;
+}
+
+/* Progress Bar */
+.bar {
+  height: 100%;
+  border-radius: 20px;
+}
+
+/* Income Bar */
+.income-bar {
+  background: #8b68f4;
+}
+
+/* Expense Bar */
+.expense-bar {
+  background: #ee8b91;
+}
+
+/* Mini Stats */
+.mini-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.mini-stats div {
+  padding: 13px;
+  border-radius: 10px;
+  background: #faf9fc;
+}
+
+.mini-stats span,
+.mini-stats strong {
+  display: block;
+}
+
+.mini-stats span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mini-stats strong {
+  margin-top: 5px;
+  font-size: 18px;
+}

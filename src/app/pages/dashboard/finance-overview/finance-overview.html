@@ -1,0 +1,42 @@
+<article class="panel">
+  <div class="panel-heading">
+    <h2>Finance Overview</h2>
+    <span class="panel-link">This month</span>
+  </div>
+  <div class="overview-total">
+    <span>Income vs expenses</span>
+    <strong
+      >{{ data.totalIncome - data.totalExpenses |
+      currency:'INR':'symbol':'1.0-0' }}</strong
+    >
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">
+      <span>Income</span
+      ><strong>{{ data.totalIncome | currency:'INR':'symbol':'1.0-0' }}</strong>
+    </div>
+    <div class="bar-track">
+      <div class="bar income-bar" style="width: 100%"></div>
+    </div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">
+      <span>Expenses</span
+      ><strong
+        >{{ data.totalExpenses | currency:'INR':'symbol':'1.0-0' }}</strong
+      >
+    </div>
+    <div class="bar-track">
+      <div
+        class="bar expense-bar"
+        [style.width.%]="data.totalExpenses / data.totalIncome * 100"
+      ></div>
+    </div>
+  </div>
+  <div class="mini-stats">
+    <div><span>Income entries</span><strong>{{ income.length }}</strong></div>
+    <div>
+      <span>Expense entries</span><strong>{{ expenses.length }}</strong>
+    </div>
+  </div>
+</article>

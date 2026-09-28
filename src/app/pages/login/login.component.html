@@ -25,7 +25,7 @@
       @if(errorMessage){
         <p class="form-error">{{ errorMessage }}</p>
       }
-        <button class="primary-button" type="submit">LOGIN</button>
+        <button class="primary-button" type="submit" [disabled]="loginForm.invalid">LOGIN</button>
       </form>
     </div>
   </section>

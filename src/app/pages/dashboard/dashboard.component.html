@@ -3,7 +3,11 @@
   <div class="dashboard-layout">
     <app-sidebar (addTransaction)="openTransactionForm()"></app-sidebar>
     @if(showTransactionForm){
-      <app-transaction-form></app-transaction-form>
+      <div (click)="closeTransactionForm()" class="modal-overlay">
+        <div class="modal-container" (click)="$event.stopPropagation()">
+          <app-transaction-form (close)="closeTransactionForm()"></app-transaction-form>
+        </div>
+      </div>
     }
 
     <section class="dashboard-content">

@@ -6,22 +6,27 @@ import { Sidebar } from './sidebar/sidebar';
 import { DashboardContent } from './dashboard-content/dashboard-content';
 import { FinanceOverview } from './finance-overview/finance-overview';
 import { DashboardGrid } from './dashboard-grid/dashboard-grid';
-import { TransactionForm } from './sidebar/transaction-form/transaction-form';
+import { TransactionFormComponent } from './sidebar/transaction-form/transaction-form';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, Sidebar, DashboardContent, FinanceOverview, DashboardGrid, TransactionForm],
-  templateUrl: './dashboard.component.html'
+  imports: [CommonModule, Sidebar, DashboardContent, FinanceOverview, DashboardGrid, TransactionFormComponent],
+  templateUrl: './dashboard.component.html',
+  styleUrl:"./dashboard.component.css",
 })
 export class DashboardComponent {
   showTransactionForm:boolean =false;
   private readonly expenseService = inject(ExpenseService);
   private readonly router = inject(Router);
 
-  readonly data = this.expenseService.getDashboardData();  
+  readonly data = this.expenseService.dashboard;  
 
   openTransactionForm(){
     this.showTransactionForm=true;
+  }
+
+  closeTransactionForm(){
+    this.showTransactionForm=false;
   }
 }

@@ -64,56 +64,53 @@ export class ExpenseService {
   
 
   addTransaction(transaction: {
-    title: string;
+  title: string;
+  amount: number;
+  type: "income" | "expense";
+  date: string;
+  icon: string;
+}) {
 
-    amount: number;
+  console.log("ADDING TRANSACTION:", transaction);
 
-    type: "income" | "expense";
+  const currentData = this.dashboardData();
 
-    date: string;
+  const newTransaction = {
+    id: Date.now(),
+    title: transaction.title,
+    date: transaction.date,
+    amount: transaction.amount,
+    type: transaction.type,
+    icon: transaction.icon,
+  };
 
-    icon: string;
-  }) {
-    const currentData = this.dashboardData();
+  const updatedTransactions = [
+    newTransaction,
+    ...currentData.transactions
+  ];
 
-    const newTransaction = {
-      id: Date.now(),
+  const updatedIncome =
+    transaction.type === "income"
+      ? currentData.totalIncome + transaction.amount
+      : currentData.totalIncome;
 
-      title: transaction.title,
+  const updatedExpenses =
+    transaction.type === "expense"
+      ? currentData.totalExpenses + transaction.amount
+      : currentData.totalExpenses;
 
-      date: transaction.date,
+  const updatedBalance =
+    updatedIncome - updatedExpenses;
 
-      amount: transaction.amount,
+  this.dashboardData.set({
+    totalBalance: updatedBalance,
+    totalIncome: updatedIncome,
+    totalExpenses: updatedExpenses,
+    transactions: updatedTransactions,
+  });
 
-      type: transaction.type,
-
-      icon: transaction.icon,
-    };
-
-    const updatedTransactions = [newTransaction, ...currentData.transactions];
-
-    const updatedIncome =
-      transaction.type === "income"
-        ? currentData.totalIncome + transaction.amount
-        : currentData.totalIncome;
-
-    const updatedExpenses =
-      transaction.type === "expense"
-        ? currentData.totalExpenses + transaction.amount
-        : currentData.totalExpenses;
-
-    const updatedBalance = updatedIncome - updatedExpenses;
-
-    this.dashboardData.set({
-      totalBalance: updatedBalance,
-
-      totalIncome: updatedIncome,
-
-      totalExpenses: updatedExpenses,
-
-      transactions: updatedTransactions,
-    });
-  }
+  console.log("AFTER UPDATE:", this.dashboardData());
+}
 
   getDashboardData(): DashboardData {
     return this.dashboardData();

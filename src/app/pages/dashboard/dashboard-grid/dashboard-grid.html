@@ -4,7 +4,7 @@
     <span class="panel-link">View all</span>
   </div>
 
-  @for (transaction of data.transactions; track transaction.title) {
+  @for (transaction of data().transactions; track transaction.title) {
     <div class="transaction">
       <div class="transaction-icon">
         {{ transaction.icon }}

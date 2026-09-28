@@ -1,0 +1,182 @@
+.transaction-form {
+  width: 100%;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.form-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-header p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.close-button {
+  width: 32px;
+  height: 32px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f5f2fa;
+  color: #555;
+
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background: #eeeaf5;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid #e6e2ed;
+  border-radius: 8px;
+
+  background: #f7f6fa;
+
+  color: var(--text);
+
+  font-size: 13px;
+
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px #875cf51c;
+  background: white;
+}
+
+.field-error {
+  margin-top: 5px;
+
+  color: #dc3545;
+
+  font-size: 11px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.cancel-button,
+.submit-button {
+  padding: 11px 18px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.cancel-button {
+  border: 1px solid #e5e1eb;
+
+  background: white;
+  color: #666;
+}
+
+.cancel-button:hover {
+  background: #f7f5fa;
+}
+
+.submit-button {
+  border: none;
+
+  background: var(--primary);
+  color: white;
+}
+
+.submit-button:hover {
+  background: var(--primary-dark);
+}
+
+.submit-button:disabled {
+  background: #c8bced;
+  cursor: not-allowed;
+}
+
+.emoji-input {
+  display: flex;
+  gap: 8px;
+}
+
+.emoji-input input {
+  flex: 1;
+}
+
+.emoji-button {
+  width: 45px;
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.emoji-button:hover {
+  background: #f5f3ff;
+}
+
+.emoji-picker {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+  padding: 10px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.emoji-option {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  padding: 7px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.emoji-option:hover {
+  background: #f3efff;
+}

@@ -1,1 +1,164 @@
-<p>transaction-form works!</p>
+<div class="transaction-form">
+
+  <div class="form-header">
+    <div>
+      <h2>Add Transaction</h2>
+      <p>Enter the transaction details</p>
+    </div>
+
+    <button
+      type="button"
+      class="close-button"
+      (click)="closeForm()">
+      ×
+    </button>
+  </div>
+
+
+  <form
+    [formGroup]="transactionForm"
+    (ngSubmit)="submit()">
+
+    <!-- Title -->
+    <div class="form-group">
+      <label for="title">Title</label>
+
+      <input
+        id="title"
+        type="text"
+        formControlName="title"
+        placeholder="e.g. Salary, Groceries">
+
+      @if (
+        transactionForm.controls.title.touched &&
+        transactionForm.controls.title.invalid
+      ) {
+        <span class="field-error">
+          Title is required
+        </span>
+      }
+    </div>
+
+
+    <!-- Date -->
+    <div class="form-group">
+      <label for="date">Date</label>
+
+      <input
+        id="date"
+        type="date"
+        formControlName="date">
+
+      @if (
+        transactionForm.controls.date.touched &&
+        transactionForm.controls.date.invalid
+      ) {
+        <span class="field-error">
+          Date is required
+        </span>
+      }
+    </div>
+
+
+    <!-- Amount -->
+    <div class="form-group">
+      <label for="amount">Amount</label>
+
+      <input
+        id="amount"
+        type="number"
+        formControlName="amount"
+        placeholder="Enter amount">
+
+      @if (
+        transactionForm.controls.amount.touched &&
+        transactionForm.controls.amount.invalid
+      ) {
+        <span class="field-error">
+          Enter an amount greater than 0
+        </span>
+      }
+    </div>
+
+
+    <!-- Type -->
+    <div class="form-group">
+      <label for="type">Type</label>
+
+      <select
+        id="type"
+        formControlName="type">
+
+        <option value="income">
+          Income
+        </option>
+
+        <option value="expense">
+          Expense
+        </option>
+
+      </select>
+    </div>
+
+
+    
+    <div class="form-group">
+  <label for="icon">Icon</label>
+
+  <div class="emoji-input">
+
+    <input
+      id="icon"
+      type="text"
+      formControlName="icon"
+      placeholder="Choose an emoji">
+
+    <button
+      type="button"
+      class="emoji-button"
+      (click)="showEmojiPicker = !showEmojiPicker">
+      😊
+    </button>
+
+  </div>
+
+  @if (showEmojiPicker) {
+    <div class="emoji-picker">
+
+      @for (emoji of emojis; track emoji) {
+        <button
+          type="button"
+          class="emoji-option"
+          (click)="selectEmoji(emoji)">
+          {{ emoji }}
+        </button>
+      }
+
+    </div>
+  }
+
+</div>
+
+
+    
+    <div class="form-actions">
+
+      <button
+        type="button"
+        class="cancel-button"
+        (click)="closeForm()">
+        Cancel
+      </button>
+
+      <button
+        type="submit"
+        class="submit-button"
+        [disabled]="transactionForm.invalid">
+        Add Transaction
+      </button>
+
+    </div>
+
+  </form>
+
+</div>

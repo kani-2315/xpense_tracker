@@ -12,5 +12,5 @@ import { CurrencyPipe } from '@angular/common';
 export class DashboardContent {
   private expenseService=inject(ExpenseService);
 
-  data = this.expenseService.getDashboardData();
+  data = this.expenseService.dashboard;
 }

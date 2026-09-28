@@ -12,5 +12,5 @@ import { ExpenseService } from '../../../services/expense.service';
 export class DashboardGrid {
   private expenseService=inject(ExpenseService);
 
-  data=this.expenseService.getDashboardData();
+  data=this.expenseService.dashboard;
 }

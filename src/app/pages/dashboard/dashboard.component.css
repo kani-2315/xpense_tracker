@@ -1,0 +1,40 @@
+.dashboard-page {
+  min-height: 100vh;
+  width:100%;
+}
+
+.dashboard-layout {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+.dashboard-content {
+  flex: 1;
+  min-width: 0;
+  padding: 32px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 22px;
+}
+
+
+
+
+@media (max-width: 900px) {
+  .dashboard-content {
+    padding: 22px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  app-sidebar {
+    display: none;
+  }
+}

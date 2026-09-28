@@ -13,13 +13,13 @@ import { Transaction } from '../../../models/expense.model';
 export class FinanceOverview {
   private expenseService=inject(ExpenseService);
 
-  data=this.expenseService.getDashboardData();
+  data=this.expenseService.dashboard;
 
   get expenses(): Transaction[] {
-    return this.data.transactions.filter(transaction => transaction.type === 'expense');
+    return this.data().transactions.filter(transaction => transaction.type === 'expense');
   }
 
   get income(): Transaction[] {
-    return this.data.transactions.filter(transaction => transaction.type === 'income');
+    return this.data().transactions.filter(transaction => transaction.type === 'income');
   }
 }
